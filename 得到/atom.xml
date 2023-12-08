@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[测试一下]]></title>
+  <link href="123123/atom.xml" rel="self"/>
+  <link href="123123/"/>
+  <updated>2023-12-09T00:08:46+08:00</updated>
+  <id>123123/</id>
+  <author>
+    <name><![CDATA[]]></name>
+    
+  </author>
+  <generator uri="http://www.coderforart.com/">CoderForArt</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[MAC 切换 java JDK版本]]></title>
+    <link href="123123/17020495603218.html"/>
+    <updated>2023-12-08T23:32:40+08:00</updated>
+    <id>123123/17020495603218.html</id>
+    <content type="html"><![CDATA[
+<p>终端执行命令  查看本地各版本jdk：mac通常默认安装了jdk1.8 安装目录是 /Library/Java/JavaVirtualMachines/</p>
+<pre><code class="language-text">cd /Library/Java/JavaVirtualMachines/
+
+ls
+</code></pre>
+<p>上述命令列出的各版本目录名 后，在全局配置文件.bash_profile中新增上面命令列出的各版本jdk，并指定当前环境变量默认的版本为jdk1.8</p>
+<pre><code class="language-plain_text">--使用zsh的是zshrc文件 
+open -e ~/.bash_profile
+</code></pre>
+<p>.bash_profile内 新增java相关配置</p>
+<pre><code class="language-java">#设置jdk版本
+export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/jdk11.0.11.jdk/Contents/Home
+#export JAVA_7_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home
+#export JAVA_9_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home
+export JAVA_15_HOME=/Library/Java/JavaVirtualMachines/jdk-15.0.1.jdk/Contents/Home
+export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home
+#export JAVA_6_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+export JAVA_21_HOME=/Library/Java/JavaVirtualMachines/jdk-21.0.1.jdk/Contents/Home
+# 默认 jdk 使用1.8版本
+export JAVA_HOME=$JAVA_8_HOME
+#alias是设置指令的别名：动态切换JAVA_HOME的配置
+alias jdk11=&quot;export JAVA_HOME=$JAVA_11_HOME&quot;
+#alias jdk7=&quot;export JAVA_HOME=$JAVA_7_HOME&quot;
+alias jdk8=&quot;export JAVA_HOME=$JAVA_8_HOME&quot;
+alias jdk15=&quot;export JAVA_HOME=$JAVA_15_HOME&quot;
+#alias jdk9=&quot;export JAVA_HOME=$JAVA_9_HOME&quot;
+#alias jdk6=&quot;export JAVA_HOME=$JAVA_6_HOME&quot;
+alias jdk21=&quot;export JAVA_HOME=$JAVA_21_HOME&quot;
+</code></pre>
+<p><figure><img src="media/17020495603218/16995190507911.jpg" alt="" /></figure><br />
+上述文件编辑后，保存，并执行命令重载该文件：重载后，本机默认java版本为1.8</p>
+<pre><code class="language-java">source ~/.bash_profile
+</code></pre>
+<p>可以终端执行命令切换不同版本的java使用：注意 使用下列命令切换版本，只对当前终端窗口有效  新打开的终端窗口，默认使用的还是系统指定默认版本，如需固定使用某个java版本，建议将该版本设置为默认版本</p>
+<pre><code class="language-java">java11 
+
+java8 
+
+java其他版本 
+
+</code></pre>
+
+]]></content>
+  </entry>
+  
+</feed>
